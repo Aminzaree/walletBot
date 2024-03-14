@@ -1,0 +1,13 @@
+@media screen and (max-width: 400px){
+    .form-group ul li svg{
+        font-size: 25px !important;
+    }
+
+    .form-group ul li p{
+        font-size: 14px !important;
+    }
+
+    .form-group .custom-control{
+        padding: 0.5rem !important;
+    }
+}

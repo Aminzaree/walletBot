@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>python-telegram-bot Example WebApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+</head>
+
+
+
+<body>
+    
+    <!-- Select Currency -->
+    <div id="selectCurrency">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 pt-3">
+                    <div class="form-group">
+                        <label class="fw-bold pb-2" for="currency"><i class="fa-solid fa-dollar-sign text-warning"></i>انتخاب ارز:</label>
+                        <select class="form-control" id="currency">
+                            <option value="dollar_usa">دلار امریکا</option>
+                            <option value="dollar_canada">دلار کانادا</option>
+                            <option value="pound_uk">پوند انگلیس</option>
+                            <option value="euro">یورو</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Method -->
+    <div id="paymentMethod">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 pt-4">
+                    <div class="form-group">
+                        <label class="fw-bold pb-3"><i class="fa-solid fa-credit-card text-primary"></i>نحوه پرداخت:</label>
+                        <div class="radio-group">
+                            <ul class="row justify-content-center">
+                                <li id="bank_transfer" class="col-4 list-unstyled text-center active">
+                                    <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4 ">
+                                        <i class="fa-solid fa-money-check-dollar display-6"></i>
+                                        <p class="h5 pt-2">حواله</p>
+                                    </div>
+                                </li>
+                                <li id="cash" class="col-4 list-unstyled text-center">
+                                    <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4">
+                                        <i class="fa-solid fa-sack-dollar display-6"></i>
+                                        <p class="h5 pt-2">اسکناس</p>
+                                    </div>
+                                </li>
+                                <li id="paypal" class="col-4 list-unstyled text-center">
+                                    <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4">
+                                        <i class="fa-brands fa-paypal display-6"></i>
+                                        <p class="h5 pt-2">پی پال</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Type -->
+    <div id="accountType">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 pt-2">
+                    <div class="form-group">
+                        <label class="fw-bold pb-3"><i class="fa-solid fa-file-invoice text-success"></i>نوع حساب:</label>
+                        <div class="radio-group">
+                            <ul class="row justify-content-center">
+                                <li id="individual" class="col-4 list-unstyled text-center active">
+                                    <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4 active">
+                                        <i class="fa-solid fa-user display-6"></i>
+                                        <p class="h5 pt-2">شخص</p>
+                                    </div>
+                                </li>
+                                <li id="company" class="col-4 list-unstyled text-center">
+                                    <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4">
+                                        <i class="fa-solid fa-users display-6"></i>
+                                        <p class="h5 pt-2">شرکت</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Amount Section -->
+    <div id="amountSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 pt-3 pb-4">
+                    <div class="form-group amount-section">
+                        <label class="fw-bold pb-3" for="fw-bold amount"><i class="fa-solid fa-coins text-warning"></i>مقدار ارز خود را وارد کنید:</label>
+                        <div class="amount-container">
+                            <input type="text" id="amount" class="form-control mb-3" placeholder="لطفا مقدار ارز خود را وارد کنید...">
+                            <div class="w-100 text-end">
+                                <span id="value" class="amount-value">$0</span>
+                                <button id="increase"><i class="fa-solid fa-plus"></i></button>
+                                <button id="decrease"><i class="fa-solid fa-minus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Btn -->
+        <!-- <section id="submitBtn">
+            <div class="row text-end">
+                <div class="col-md-12 pt-3 pb-4">
+                    <button id="submit-btn">ارسال نام</button>
+                </div>
+            </div>
+        </section> -->
+
+
+
+
+    <!-- JS Source and Code -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+
+        <!-- <script type="text/javascript">
+
+            Telegram.WebApp.ready();
+
+            Telegram.WebApp.MainButton.setText('ارسال نام').show().onClick(function () {
+                const currency = document.getElementById('currency').value;
+                const payment = document.querySelector('input[name="payment"]:checked').value;
+                const type = document.querySelector('input[name="type"]:checked').value;
+                const data = JSON.stringify({ currency, payment, type });
+                Telegram.WebApp.sendData(data);
+                Telegram.WebApp.close();
+            });
+
+            document.getElementById('increase').addEventListener('click', function () {
+                const value = parseInt(document.getElementById('value').textContent.substring(1));
+                document.getElementById('value').textContent = '$' + (value + 1);
+            });
+
+            document.getElementById('decrease').addEventListener('click', function () {
+                const value = parseInt(document.getElementById('value').textContent.substring(1));
+                document.getElementById('value').textContent = '$' + (value - 1);
+            });
+
+            document.getElementById('submit-btn').addEventListener('click', function () {
+                const currency = document.getElementById('currency').value;
+                const payment = document.querySelector('input[name="payment"]:checked').value;
+                const type = document.querySelector('input[name="type"]:checked').value;
+                const data = JSON.stringify({ currency, payment, type });
+                Telegram.WebApp.sendData(data);
+                Telegram.WebApp.close();
+            });
+
+            Telegram.WebApp.expand();
+        </script> -->
+
+
+        <!-- <script type="text/javascript" defer>
+            Telegram.WebApp.ready();
+            Telegram.WebApp.MainButton.setText('Xác nhận').show().onClick(function () {
+                const data = JSON.stringify({
+                  username: document.querySelector('input[name=username]').value,
+                  password: document.querySelector('input[name=password]').value,
+                  date_start: document.querySelector('input[name=dates]').value,
+                  date_end: document.querySelector('input[name=datee]').value,
+                  ei_type: document.getElementsByName('ei_type')[0].value,
+                  download_ei: [].filter.call(document.getElementsByName('download_ei'), (c) => c.checked).map(c => c.value)
+                 });
+                Telegram.WebApp.sendData(data);
+                Telegram.WebApp.close();
+            });
+        </script> -->
+
+</body>
+
+</html>
