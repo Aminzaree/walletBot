@@ -151,6 +151,18 @@ svg{
     -o-transition: all 0.3s ease-in-out;
 }
 
+#amountSection .amount-section input[type="text"]::-webkit-input-placeholder {
+    color: var(--tg-theme-hint-color, #ccc);
+}
+
+#amountSection .amount-section input[type="text"]::-moz-placeholder {
+    color: var(--tg-theme-hint-color, #ccc);
+}
+
+#amountSection .amount-section input[type="text"]:-ms-input-placeholder {
+    color: var(--tg-theme-hint-color, #ccc);
+}
+
 /* #amountSection .amount-section input#amount:focus{
     color: #000;
 } */
