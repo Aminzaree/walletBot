@@ -48,19 +48,19 @@
                         <label class="fw-bold pb-3"><i class="fa-solid fa-credit-card text-primary"></i>نحوه پرداخت:</label>
                         <div class="radio-group">
                             <ul class="row justify-content-center">
-                                <li id="bank_transfer" class="col-4 list-unstyled text-center active">
+                                <li onclick="changePaymentMethod(this)" id="bank_transfer" class="col-4 list-unstyled text-center paymentMethod active">
                                     <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4 ">
                                         <i class="fa-solid fa-money-check-dollar display-6"></i>
                                         <p class="h5 pt-2">حواله</p>
                                     </div>
                                 </li>
-                                <li id="cash" class="col-4 list-unstyled text-center">
+                                <li onclick="changePaymentMethod(this)" id="cash" class="col-4 list-unstyled text-center paymentMethod">
                                     <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4">
                                         <i class="fa-solid fa-sack-dollar display-6"></i>
                                         <p class="h5 pt-2">اسکناس</p>
                                     </div>
                                 </li>
-                                <li id="paypal" class="col-4 list-unstyled text-center">
+                                <li onclick="changePaymentMethod(this)" id="paypal" class="col-4 list-unstyled text-center paymentMethod">
                                     <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4">
                                         <i class="fa-brands fa-paypal display-6"></i>
                                         <p class="h5 pt-2">پی پال</p>
@@ -83,13 +83,13 @@
                         <label class="fw-bold pb-3"><i class="fa-solid fa-file-invoice text-success"></i>نوع حساب:</label>
                         <div class="radio-group">
                             <ul class="row justify-content-center">
-                                <li id="individual" class="col-4 list-unstyled text-center active">
-                                    <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4 active">
+                                <li onclick="changeAccountType(this)" id="individual" class="col-4 list-unstyled text-center accountType active">
+                                    <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4">
                                         <i class="fa-solid fa-user display-6"></i>
                                         <p class="h5 pt-2">شخص</p>
                                     </div>
                                 </li>
-                                <li id="company" class="col-4 list-unstyled text-center">
+                                <li onclick="changeAccountType(this)" id="company" class="col-4 list-unstyled text-center accountType">
                                     <div class="custom-control custom-radio d-flex flex-column p-3 bg-white rounded-4">
                                         <i class="fa-solid fa-users display-6"></i>
                                         <p class="h5 pt-2">شرکت</p>
@@ -137,7 +137,7 @@
 
 
     <!-- JS Source and Code -->
-    <!-- <script src="assets/js/script.js"></script> -->
+    <script src="assets/js/script.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 
