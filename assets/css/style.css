@@ -6,6 +6,23 @@
         url('../fonts/vazir.woff2') format('woff2');
 }
 
+/* html {
+	--tg-color-scheme: var(--tg-color-scheme);
+	--tg-theme-bg-color: #212121;
+	--tg-theme-button-color: #8774e1;
+	--tg-theme-button-text-color: #ffffff;
+	--tg-theme-hint-color: #aaaaaa;
+	--tg-theme-link-color: #8774e1;
+	--tg-theme-secondary-bg-color: #181818;
+	--tg-theme-text-color: #ffffff;
+	--tg-theme-header-bg-color: #212121;
+	--tg-theme-accent-text-color: #8774e1;
+	--tg-theme-section-bg-color: #212121;
+	--tg-theme-section-header-text-color: #8774e1;
+	--tg-theme-subtitle-text-color: #aaaaaa;
+	--tg-theme-destructive-text-color: #ff595a;
+} */
+
 * {
     padding: 0;
     margin: 0;
@@ -15,13 +32,17 @@
 body {
     direction: rtl;
     font-family: "vazir" !important;
-    color: var(--tg-theme-text-color, #222);
-    /* Alternate color = #222 */
-    /*--bg-color: var(--tg-theme-bg-color, #fff);  Alternate color = #fff */
-    /* background-color: var(--bg-color); */
+    --bg-color: var(--tg-theme-bg-color, #fff);
     background: transparent linear-gradient(180deg, var(--bg-color) 0%, var(--bg-color) 100%) no-repeat;
+    color: var(--tg-theme-text-color, #222);
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
     color-scheme: var(--tg-color-scheme);
-    /*Black or Light Theme*/
+  }
+
+body.gray {
+    background-color: var(--tg-theme-secondary-bg-color, #efefef);
 }
 
 section {
@@ -43,6 +64,8 @@ svg {
     margin-left: 5px;
 }
 
+
+
 /* --------------------------------------------- */
 /* ---------------Select currency--------------- */
 /* --------------------------------------------- */
@@ -52,9 +75,10 @@ svg {
     outline: none;
     box-shadow: none;
     cursor: pointer;
+    font-size: 15px;
     color: var(--tg-theme-text-color, #222222);
     background-color: var(--tg-theme-bg-color, #ffffff);
-    border: 1px solid var(--tg-theme-link-color, #000);
+    border: 3px solid var(--tg-theme-link-color, #000);
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -74,6 +98,7 @@ svg {
 } */
 
 
+
 /* --------------------------------------------- */
 /* ----------------payment method--------------- */
 /* --------------------------------------------- */
@@ -85,6 +110,11 @@ svg {
 #paymentMethod ul li {
     animation: heartbeat 2s;
     -webkit-animation: heartbeat 2s;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 
 #paymentMethod ul li .custom-control {
@@ -95,8 +125,22 @@ svg {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+#paymentMethod .form-group .radio-group .custom-control {
+    color: var(--tg-theme-text-color) !important;
+    background-color: var(--tg-theme-bg-color) !important;
+}
+
 #paymentMethod .form-group .radio-group .active .custom-control {
-    background-color: #50a8eb !important;
+    /* background-color: #50a8eb !important; */
+    background-color: var(--tg-theme-link-color, #50a8eb) !important;
+}
+
+#paymentMethod .form-group .radio-group .active{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }
 
 #paymentMethod .form-group .radio-group .active p {
@@ -116,6 +160,11 @@ svg {
 #accountType ul li {
     animation: heartbeat 2s;
     -webkit-animation: heartbeat 2s;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 
 #accountType ul li .custom-control {
@@ -126,8 +175,22 @@ svg {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+#accountType .form-group .radio-group .custom-control {
+    color: var(--tg-theme-text-color) !important;
+    background-color: var(--tg-theme-bg-color) !important;
+}
+
 #accountType .form-group .radio-group .active .custom-control {
-    background-color: #50a8eb !important;
+    /* background-color: #50a8eb !important; */
+    background-color: var(--tg-theme-link-color, #50a8eb) !important;
+}
+
+#accountType .form-group .radio-group .active{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }
 
 #accountType .form-group .radio-group .active p {
@@ -145,14 +208,14 @@ svg {
 /* --------------------------------------------- */
 
 #amountSection .amount-section input[type=text] {
-    font-size: 13px;
+    font-size: 15px;
     border: none;
     outline: none;
     box-shadow: none;
     cursor: pointer;
     color: var(--tg-theme-text-color, #222222);
     background-color: var(--tg-theme-bg-color, #ffffff);
-    border: 1px solid var(--tg-theme-link-color, #000);
+    border: 3px solid var(--tg-theme-link-color, #000);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -190,7 +253,7 @@ svg {
 }
 
 #amountSection .amount-section .amount-container #decrease {
-    background-color: #50a8eb;
+    background-color: var(--tg-theme-link-color, #50a8eb);
     border: 2px solid rgba(255, 255, 255, 1);
     width: 35px;
     height: 35px;
@@ -215,7 +278,7 @@ svg {
 }
 
 #amountSection .amount-section .amount-container #increase {
-    background-color: #50a8eb;
+    background-color: var(--tg-theme-link-color, #50a8eb);
     border: 2px solid rgba(255, 255, 255, 1);
     width: 35px;
     height: 35px;
@@ -243,6 +306,9 @@ svg {
     color: rgba(255, 255, 255, 1);
 }
 
+#amountSection .amount-section .amount-container #value{
+    color: var(--tg-theme-text-color, #222);
+}
 
 
 /* --------------------------------------------- */
@@ -279,6 +345,7 @@ svg {
 }
 
 label {
+    color: var(--tg-theme-text-color, #000);
     animation: text-focus-in 0.5s;
     -webkit-animation: text-focus-in 0.5s;
 }
