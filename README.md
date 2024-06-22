@@ -1,1 +1,1 @@
-# wallet bot with telegram mini app
+# Wallet Bot With Telegram Mini App
